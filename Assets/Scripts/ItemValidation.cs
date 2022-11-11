@@ -16,14 +16,6 @@ public class ItemValidation : MonoBehaviour
 
         if (other.gameObject.tag == tagName)
         { 
-            tagNameDeposit = tagName + "Dep";
-
-            if (deposit == "")
-            {
-                print("Pegue outro item!");
-
-            }
-
             if (deposit == tagNameDeposit)
             {
 
@@ -31,6 +23,11 @@ public class ItemValidation : MonoBehaviour
                 deposit = "";
                 print("GANHOU PONTO! Parabéns! Você tornou o mundo um lugar melhor!");
                 pontos += 1;
+
+            }
+            if (deposit == "")
+            {
+                print("Pegue outro item!");
 
             }
             if (deposit != tagNameDeposit && deposit != "")
@@ -56,6 +53,7 @@ public class ItemValidation : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        print("Está colidindo");
         Validator(other.gameObject.tag, other);  
     }
     
