@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class HUD : MonoBehaviour
 {
-    Text hud_text;    
+    Text hud_text;
+    public Player player;
+    
+    public void showMessages()
+    {
+        if (player.Collected == true)
+        {
+            hud_text.text = "Objeto Coletado!";
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        hud_text = GetComponent<Text>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        hud_text.text = "Hello World!"  ;
+        showMessages();
     }
 }
